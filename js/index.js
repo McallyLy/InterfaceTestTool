@@ -15,9 +15,31 @@ $(function() {
 	$('.submit').on('click', submit);
 	$('.nav-item').on('click', liEvent);
 	$('#link').on('click', function() {
-		window.open("http://192.168.1.188:1682/");
+		window.open("http://192.168.1.188:1681/");
 	});
+	$('#Copy').on('click', copy);
 });
+
+/**
+ * 复制代码
+ */
+function copy() {
+	var cy = $('.contentData')[0];
+	var range = document.createRange();
+	range.selectNode(cy);
+	window.getSelection().addRange(range);
+	var successful = document.execCommand('copy');
+	try {
+		$('#Copy').html('复制完成');
+	} catch(err) {
+		$('#Copy').html('复制失败');
+	}
+	// Remove the selections - NOTE: Should use
+	// removeRange(range) when it is supported  
+	window.getSelection().removeAllRanges();
+
+}
+
 /**
  * 初始化
  */
@@ -43,7 +65,7 @@ function del() {
  * 提交请求
  */
 function submit() {
-
+       $('#Copy').html('复制');
 	//http://192.168.1.188:7788/AssemblyOrder.aspx?action=loginuser
 	var json = jsondata(navidx),
 		URL = $('#URL').val(),
