@@ -1,2 +1,2 @@
-![image](https://github.com/McallyLy/InterfaceTestTool/img/one.png)
-![image](https://github.com/McallyLy/InterfaceTestTool/img/two.png)
+![image](https://github.com/McallyLy/InterfaceTestTool/blob/master/img/one.png)
+![image](https://github.com/McallyLy/InterfaceTestTool/blob/master/img/two.png)
